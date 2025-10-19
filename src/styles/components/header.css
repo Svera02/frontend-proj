@@ -358,3 +358,202 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.features {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 80px 0; /* отступ сверху и снизу */
+}
+
+.features__container {
+  width: 1190px;
+  height: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Один элемент */
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  text-align: center;
+}
+
+/* Круг с иконкой */
+.feature__icon-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--color-accent, #f6623e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.feature__icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Заголовок */
+.feature__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 133%;
+  color: #000000;
+  margin: 8px 0;
+}
+
+/* Текст под заголовком */
+.feature__text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #9d9d9d;
+  text-align: center;
+}
+.health-section {
+  width: 100%;
+  max-width: 1854px;
+  height: 678px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.health-section__container {
+  position: relative;
+  width: 1854px;
+  height: 678px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Левый блок с текстом и фоном */
+.health-section__content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1009px;
+  height: 678px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Прямоугольник-фон */
+.health-section__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1009px;
+  height: 678px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Текст поверх фона */
+.health-section__text-block {
+  position: relative;
+  z-index: 2;
+  width: 515px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+/* Стили текста */
+.health-section__title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 144%;
+  letter-spacing: 0.06em;
+  color: var(--000000);
+  margin: 0 0 30px 0;
+}
+
+.health-section__text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 156%;
+  color: var(--454545);
+  margin: 0 0 20px 0; /* отступ снизу для каждого параграфа */
+}
+
+/* Отступ после второго параграфа как выше */
+.health-section__text:nth-of-type(2) {
+  margin-bottom: 40px; /* увеличенный отступ как в вашем примере */
+}
+
+/* Правый блок с фотографиями */
+.health-section__images {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: 678px;
+  display: flex;
+  gap: 30px;
+  z-index: 3;
+  margin-right: 100px;
+}
+
+.health-section__images-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Стили для фотографий */
+.health-section__img--top {
+  width: 432px;
+  height: 329px;
+  object-fit: cover;
+}
+
+.health-section__img--bottom {
+  width: 432px;
+  height: 319px;
+  object-fit: cover;
+}
+
+.health-section__img--side {
+  width: 490px;
+  height: 678px;
+  object-fit: cover;
+}
+
+.health-section__btn {
+  width: 256px;
+  height: 56px;
+  border: 2px solid #f6623e;
+  background-color: transparent;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.health-section__btn:hover {
+  background-color: #f6623e;
+  color: #fff;
+}
+
+
+
+
