@@ -306,17 +306,15 @@ body {
     flex-wrap: nowrap;
 }
 
-/* Общие стили для карточек */
 .product {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    width: 320px; /* одинаковый размер для всех */
+    width: 320px; 
     height: 380px;
 }
 
-/* Фон для изображений */
 .product__image-bg {
     display: flex;
     justify-content: center;
@@ -326,12 +324,10 @@ body {
     height: 320px;
 }
 
-/* Серый фон для 1 и 3 карточки */
 .gray-bg {
     background-color: #E8E8E8;
 }
 
-/* Изображения для 1 и 3 карточек */
 .product:nth-child(1) .product__image,
 .product:nth-child(3) .product__image {
     width: 280px;
@@ -339,7 +335,7 @@ body {
     object-fit: cover;
 }
 
-/* Изображения для 2 и 4 карточек */
+
 .product:nth-child(2) .product__image,
 .product:nth-child(4) .product__image {
     width: 312px;
@@ -347,7 +343,7 @@ body {
     object-fit: cover;
 }
 
-/* Надписи */
+
 .product__title {
     font-family: var(--third-family);
     font-weight: 500;
