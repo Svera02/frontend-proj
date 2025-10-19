@@ -9,7 +9,10 @@ export default defineConfig({
     modulePreload: { polyfill: false },
     rollupOptions: {
       input: {
-        index: resolve(fileURLToPath(new URL('.', import.meta.url)), 'index.html'),
+        index: resolve(
+          fileURLToPath(new URL('.', import.meta.url)),
+          'index.html'
+        ),
       },
     },
   },
