@@ -407,7 +407,7 @@ body {
   font-size: 24px;
   line-height: 133%;
   color: #000000;
-  margin: 8px 0;
+  margin: 0 0 20px 0;
 }
 
 /* Текст под заголовком */
@@ -418,20 +418,22 @@ body {
   line-height: 125%;
   color: #9d9d9d;
   text-align: center;
+  
 }
 .health-section {
   width: 100%;
-  max-width: 1854px;
+  max-width: 100%; /* убираем ограничение по ширине */
   height: 678px;
-  margin: 100px auto;
+  margin: 100px 0; /* убираем auto margin по бокам */
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* скрываем возможные выходящие элементы */
 }
 
 .health-section__container {
   position: relative;
-  width: 1854px;
+  width: 100%; /* занимает всю доступную ширину */
   height: 678px;
   display: flex;
   justify-content: space-between;
@@ -443,19 +445,19 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 1009px;
+  width: 100%; /* фон на всю ширину */
   height: 678px;
   display: flex;
   align-items: center;
   z-index: 2;
 }
 
-/* Прямоугольник-фон */
+/* Прямоугольник-фон - ИСПРАВЛЕННЫЙ */
 .health-section__bg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1009px;
+  width: 100%; /* растягиваем на всю ширину */
   height: 678px;
   object-fit: cover;
   z-index: 1;
@@ -469,10 +471,10 @@ body {
   height: auto;
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
+  margin-left: 100px; /* отступ от левого края для текста */
 }
 
-/* Стили текста */
+/* Остальные стили остаются без изменений */
 .health-section__title {
   font-family: var(--font-family);
   font-weight: 600;
@@ -480,7 +482,7 @@ body {
   line-height: 144%;
   letter-spacing: 0.06em;
   color: var(--000000);
-  margin: 0 0 30px 0;
+  margin: 0 0 10px 0;
 }
 
 .health-section__text {
@@ -489,12 +491,7 @@ body {
   font-size: 16px;
   line-height: 156%;
   color: var(--454545);
-  margin: 0 0 20px 0; /* отступ снизу для каждого параграфа */
-}
-
-/* Отступ после второго параграфа как выше */
-.health-section__text:nth-of-type(2) {
-  margin-bottom: 40px; /* увеличенный отступ как в вашем примере */
+  margin: 0 0 10px 0; 
 }
 
 /* Правый блок с фотографиями */
@@ -547,12 +544,178 @@ body {
   color: #000000;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin: 20px 0 0 0;
 }
 
 .health-section__btn:hover {
   background-color: #f6623e;
   color: #fff;
 }
+
+/* ================== Секция Products ================== */
+.products-section {
+  width: 100%;
+  max-width: 1675px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+/* Заголовок секции */
+.products-section__title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 89%;
+  color: var(--000000);
+  margin-bottom: 50px;
+}
+
+/* Контейнер карточек */
+.products-section__container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ================== Карточки продуктов ================== */
+.product-card {
+  position: relative;
+  width: 395px;
+  height: 408px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Серый фон под вторую и третью карточку - ОПУЩЕН ВНИЗ */
+.product-card__gray-bg {
+  position: absolute;
+  top: 10px; /* опускаем на уровень первой карточки */
+  left: 0;
+  width: 395px;
+  height: 408px; /* уменьшаем высоту на 40px */
+  background-color: #e8e8e8;
+  z-index: 0;
+  border-radius: 4px;
+}
+
+/* Бейдж ON SALE */
+.product-card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 65px;
+  height: 20px;
+  background-color: #f6623e;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* Бейдж справа для третьей карточки */
+.product-card__badge--right {
+  top: 20px;
+  left: auto;
+  right: 10px;
+}
+
+/* Основные изображения */
+.product-card__image {
+  width: 395px;
+  height: 408px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Большая картинка для третьей карточки */
+.product-card__image--large {
+  width: 312px;
+  height: 320px;
+  object-fit: cover;
+  margin-top: 40px; /* добавляем отступ сверху как у серого фона */
+  z-index: 1;
+}
+
+/* Маленькая картинка для серых карточек */
+.product-card__image--small {
+  width: 171px;
+  height: 320px;
+  object-fit: cover;
+  margin-top: 40px; /* добавляем отступ сверху как у серого фона */
+  z-index: 1;
+}
+
+/* Название продукта - ОБЩИЙ СТИЛЬ */
+.product-card__name {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.14em;
+  color: var(--000000);
+  margin-top: 20px; /* увеличиваем отступ сверху для всех карточек */
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Контейнер для текста на 2 и 3 карточках */
+.product-card__text-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: 50px;
+}
+
+/* Цены */
+.product-card__prices {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  z-index: 2;
+  justify-content: center;
+}
+
+.product-card__price--orange {
+  color: #f6623e;
+  font-weight: 500;
+}
+
+.product-card__price--gray {
+  color: #9d9d9d;
+  text-decoration: line-through;
+}
+.products-section__btn {
+  width: 254px;
+  height: 56px;
+
+  border: 2px solid #f6623e;
+  background-color: transparent;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+ margin: 150px auto 0 auto 
+}
+
+.products-section__btn:hover {
+  background-color: #f6623e;
+  color: #fff;
+}
+
 
 
 
